@@ -126,34 +126,28 @@ Best Hyperparameters:
 - max_iter: 1000
 
 Performance Metrics:
-- Accuracy: 0.85
-- Recall: 0.72
-- Precision: 0.68
-- F1-Score: 0.70
-- Cross-Validation Score: 0.71
+
+0.3900523560209424
+
+              precision    recall  f1-score   support
+
+           0       0.93      0.30      0.45       643
+           1       0.19      0.88      0.31       121
+
+    accuracy                           0.39       764
+   macro avg       0.56      0.59      0.38       764
+weighted avg       0.81      0.39      0.43       764
+
+- Accuracy: 0.3900523560209424
+
 Confusion Matrix Analysis:
 For the best model (Logistic Regression with SMOTE):
 
-text
-Confusion Matrix:
+
                Predicted Low Risk   Predicted High Risk
-Actual Low Risk       TN: 650              FP: 110
-Actual High Risk      FN: 35               TP: 90
+Actual Low Risk       TN: 192              FP:  451
+Actual High Risk      FN:15               TP: 106
 
-Where:
-- True Negatives (TN): 650
-- False Positives (FP): 110
-- False Negatives (FN): 35
-- True Positives (TP): 90
-Key Insights from Confusion Matrix:
-
-Sensitivity (Recall): 72% - Good at identifying high-risk patients
-
-Specificity: 86% - Good at identifying low-risk patients
-
-False Positive Rate: 14% - Acceptable for medical screening
-
-False Negative Rate: 28% - Area for improvement
 
 🏗️ Project Structure
 text
@@ -161,28 +155,24 @@ framingham-heart-study/
 │
 ├── data/
 │   ├── framingham.csv              # Original dataset
-│   └── framingham_cleaned.csv      # Processed dataset
+│   └── framingham_PROPERLY_cleaned.csv      # Processed dataset
 │
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb   # EDA and visualization
-│   ├── 02_data_cleaning.ipynb      # Data preprocessing
-│   ├── 03_model_training.ipynb     # Model implementation
-│   └── 04_model_evaluation.ipynb   # Performance analysis
+│   ├── History.ipynb      # Data preprocessing
+│                          # Model implementation
+│                          # Performance analysis
 │
 ├── src/
 │   ├── __init__.py
-│   ├── data_preprocessing.py       # Data cleaning functions
-│   ├── model_training.py           # Model training pipeline
-│   ├── evaluation.py               # Model evaluation metrics
-│   └── visualization.py            # Plotting functions
+│   ├── Full_history.py       # Data cleaning functions
+│   ├── best_model.py  and Models.py # Model training pipeline
+
 │
 ├── models/
 │   └── best_model.joblib           # Saved trained model
 │
 ├── app/
-│   ├── app.py                      # Streamlit web application
-│   ├── requirements_app.txt        # App-specific dependencies
-│   └── assets/                     # Images and CSS files
+│   ├── app.py                      # Streamlit web applicatio
 │
 ├── tests/
 │   ├── test_data_preprocessing.py
@@ -191,16 +181,7 @@ framingham-heart-study/
 │
 ├── results/
 │   ├── confusion_matrix.png
-│   ├── roc_curves.png
-│   └── feature_importance.png
 │
-├── docs/
-│   ├── methodology.md
-│   ├── api_documentation.md
-│   └── user_guide.md
-│
-├── requirements.txt                # Main dependencies
-├── environment.yml                 # Conda environment
 └── README.md                       # Project documentation
 
 
