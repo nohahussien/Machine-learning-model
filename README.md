@@ -361,12 +361,7 @@ Preventive focus: Model emphasizes modifiable risk factors (smoking, BP, cholest
 
 🎯 Future Improvements
 
-
-Implement ensemble of best models
-
-Add calibration for probability estimates
-
-Include confidence intervals for predictions
+Improve data
 
 Deployment Enhancements:
 
